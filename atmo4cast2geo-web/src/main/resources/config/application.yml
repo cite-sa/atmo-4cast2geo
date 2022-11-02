@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+#  ssl: #Use this if you want the service to use https (remove the # at the beginning of each line)
+#    enable: true
+#    key-store-type: PKCS12
+#    key-store: ${KEY_STORE_PATH:} #.p12
+#    key-store-password: ${KEY_STORE_PASS}
+#    key-alias: ${KEY_ALIAS}
+spring:
+  servlet:
+    multipart:
+      max-file-size: 1073741824 #1GB
+paths:
+  temp-path: ${TEMP_PATH}
+logging:
+  config: file:logging/logback-${spring.profiles.active}.xml
+disposer:
+  location: ${DISPOSE_PATH}
+  scheduling:
+    interval: 1
+    unit: HOURS

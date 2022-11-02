@@ -1,0 +1,7 @@
+logging:
+  config: classpath:logging/logback-dev.xml
+spring:
+  servlet:
+    multipart:
+      max-file-size: -1 #Unlimited storage
+      max-request-size: -1
